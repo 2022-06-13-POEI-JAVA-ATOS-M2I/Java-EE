@@ -21,14 +21,19 @@ public class FactorielServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                
-        List<Integer> result = new ArrayList();
-        
-        for (int i = 0; i < 10; i++) {
-            result.add(calculate(i));
-        }
-        
-        request.setAttribute("result", result);
+
+        String param = request.getParameter("number");
+
+//        if (param != null) {
+            try {
+                int number = Integer.parseInt(param);
+                int result = calculate(number);
+
+                request.setAttribute("result", result);
+            } catch (Exception e) {
+                // ignore
+            }
+//        }
 
         this.getServletContext().getRequestDispatcher("/factoriel.jsp").forward(request, response);
     }

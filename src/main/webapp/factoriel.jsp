@@ -7,11 +7,18 @@
     </jsp:include>
     <body>
 
-        <c:forEach var="i" begin="0" end="9">
-            <c:out value="${i}"/>! =
-            <c:out value="${result.get(i)}"/>
-            <br />
-        </c:forEach>
+        <form method="GET">
+            <label>Entrez un nombre</label>
+            <input type="text" name="number" value="" />
+            <input type="submit" value="Calculer !" /><br>
+
+            <c:if test="${result != null}">
+                <label name="nbr">
+                    <c:out value="${param.number}"/>! =
+                    <c:out value="${result}"/>
+                </label>
+            </c:if>
+        </form>
 
     </body>
 </html>
