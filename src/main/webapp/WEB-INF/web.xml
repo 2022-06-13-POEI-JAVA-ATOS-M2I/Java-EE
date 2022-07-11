@@ -12,26 +12,6 @@
         <servlet-name>ShowIPAddress</servlet-name>
         <servlet-class>fr.m2i.jee.ShowIPAddress</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ShowRequestHeaders</servlet-name>
-        <servlet-class>fr.m2i.jee.ShowRequestHeaders</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>EvenNumberServlet</servlet-name>
-        <servlet-class>fr.m2i.jee.EvenNumberServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PrimeNumberServlet</servlet-name>
-        <servlet-class>fr.m2i.jee.PrimeNumberServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CountWordsServlet</servlet-name>
-        <servlet-class>fr.m2i.jee.CountWordsServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>FactorielServlet</servlet-name>
-        <servlet-class>fr.m2i.jee.FactorielServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>FirstServlet</servlet-name>
         <url-pattern>/FirstServlet</url-pattern>
@@ -43,26 +23,6 @@
     <servlet-mapping>
         <servlet-name>ShowIPAddress</servlet-name>
         <url-pattern>/ShowIPAddress</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ShowRequestHeaders</servlet-name>
-        <url-pattern>/ShowRequestHeaders</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EvenNumberServlet</servlet-name>
-        <url-pattern>/EvenNumberServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PrimeNumberServlet</servlet-name>
-        <url-pattern>/PrimeNumberServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CountWordsServlet</servlet-name>
-        <url-pattern>/CountWordsServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>FactorielServlet</servlet-name>
-        <url-pattern>/FactorielServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
