@@ -1,5 +1,12 @@
-<%@ page language="java" %>
-<jsp:useBean id="u" class="fr.m2i.session.Utilisateur" scope="request"/>
-<jsp:setProperty name="u" property="email" param="email"/>
-<jsp:setProperty name="u" property="motPasse" param="motPasse"/>
-<jsp:forward page="profile.jsp"  />
+<%@ page import="fr.m2i.session.Utilisateur" %>
+<%
+    String email = request.getParameter("email");
+    String motPasse = request.getParameter("motPasse");
+
+    Utilisateur u = new Utilisateur(email, motPasse);
+
+    request.setAttribute("user", u);
+    
+    RequestDispatcher requestDispatcher = request.getRequestDispatcher("profile.jsp");
+    requestDispatcher.forward(request, response);
+%>
