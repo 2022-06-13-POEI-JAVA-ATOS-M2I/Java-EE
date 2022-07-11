@@ -33,7 +33,7 @@ public class PrimeNumberServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        this.getServletContext().getRequestDispatcher("/primeNumber.jsp").forward(request, response);
+        super.doPost(request, response);
     }
 
     /**
