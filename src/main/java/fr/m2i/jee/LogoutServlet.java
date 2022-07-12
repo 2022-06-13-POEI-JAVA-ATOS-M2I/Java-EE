@@ -2,12 +2,12 @@ package fr.m2i.jee;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-public class FirstServlet extends HttpServlet {
+public class LogoutServlet extends HttpServlet {
 
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -20,7 +20,13 @@ public class FirstServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        this.getServletContext().getRequestDispatcher("/first.jsp").forward(request, response);
+
+        HttpSession session=request.getSession();  
+        session.invalidate();
+
+        response.setHeader("Refresh", "5; URL=/jee/LoginServlet");
+
+        this.getServletContext().getRequestDispatcher("/WEB-INF/logout.jsp").forward(request, response);
     }
 
     /**

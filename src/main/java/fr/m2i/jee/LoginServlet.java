@@ -1,13 +1,15 @@
 package fr.m2i.jee;
 
+import fr.m2i.session.UserDb;
+import fr.m2i.session.Utilisateur;
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-public class FirstServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -20,7 +22,8 @@ public class FirstServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        this.getServletContext().getRequestDispatcher("/first.jsp").forward(request, response);
+
+        this.getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
     /**
@@ -34,7 +37,22 @@ public class FirstServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        super.doPost(request, response);
+
+        String email = request.getParameter("email");
+        String password = request.getParameter("motPasse");
+        Utilisateur user = UserDb.checkUser(email, password);
+
+        if (user != null) {
+            HttpSession session = request.getSession();
+            session.setAttribute("user", user);
+        } else {
+            String error = "Accès refusé :)";
+            request.setAttribute("error", error);
+            this.getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+            return;
+        }
+
+        this.getServletContext().getRequestDispatcher("/welcome.jsp").forward(request, response);
     }
 
     /**

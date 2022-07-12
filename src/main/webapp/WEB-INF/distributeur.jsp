@@ -16,7 +16,8 @@
                 <th>Prix</th>
             </tr>
 
-            <c:forEach var="p" items="${stock}">
+            <c:forEach var="product" items="${stock}">
+                <c:set var="p" value ="${product}" />
                 <tr>
                     <td><c:out value="${p.getId()}"/></td>
                     <td><c:out value="${p.getNom()}"/></td>

@@ -1,0 +1,43 @@
+
+legend{
+    color : red;
+    font-family: "verdana";
+    font-size: 12px;
+}
+td{
+    font-family: "verdana";
+    font-size: 10px;
+}
+tr td:last-child {
+    color: red;
+}
+ 
+tr td:nth-child(1){
+    color: black;
+    font-family: "verdana";
+    font-size: 10px;
+    font-style: oblique;
+    text-shadow: 1px 1px 2px blue ;
+}
+select, input {
+    border: dashed green ;
+    border-radius: 3px 10px ;
+    background-color: antiquewhite;   
+}
+select:hover, input:hover{
+    border: solid orange;
+    background-color: azure;
+    color: brown;
+}
+select:focus, input:focus{
+    border: solid red;
+    background-color: aqua;
+    color: darkorchid;
+}
+input[type="submit"]:hover,input[type="reset"]:hover{
+    border: solid 1px  blue;
+    text-align: center;
+    width: 70px;
+    height: 20px;
+    background-color: activecaption;
+}

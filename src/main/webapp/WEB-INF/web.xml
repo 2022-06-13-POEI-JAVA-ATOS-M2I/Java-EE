@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>RequestLoggingFilter</filter-name>
+        <filter-class>fr.m2i.jee.RequestLoggingFilter</filter-class>
+    </filter>
+    <listener>
+        <display-name>Global listener</display-name>
+        <listener-class>fr.m2i.jee.MyFirstListener</listener-class>
+    </listener>
+    <filter-mapping>
+        <filter-name>RequestLoggingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>FirstServlet</servlet-name>
         <servlet-class>fr.m2i.jee.FirstServlet</servlet-class>
@@ -28,6 +40,18 @@
         <servlet-name>DistributeurServlet</servlet-name>
         <servlet-class>fr.m2i.jee.DistributeurServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ITClubServlet</servlet-name>
+        <servlet-class>fr.m2i.jee.ITClubServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>fr.m2i.jee.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>fr.m2i.jee.LogoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FirstServlet</servlet-name>
         <url-pattern>/FirstServlet</url-pattern>
@@ -55,6 +79,18 @@
     <servlet-mapping>
         <servlet-name>DistributeurServlet</servlet-name>
         <url-pattern>/DistributeurServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ITClubServlet</servlet-name>
+        <url-pattern>/ITClubServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

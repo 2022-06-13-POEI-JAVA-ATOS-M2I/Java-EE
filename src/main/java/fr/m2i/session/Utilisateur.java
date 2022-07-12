@@ -2,16 +2,25 @@ package fr.m2i.session;
 
 public class Utilisateur {
 
+    private Role role;
     private String email;
     private String motPasse;
 
     public Utilisateur() {
-
     }
 
-    public Utilisateur(String email, String motPasse) {
+    public Utilisateur(Role role, String email, String motPasse) {
+        this.role = role;
         this.email = email;
         this.motPasse = motPasse;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public String getEmail() {
