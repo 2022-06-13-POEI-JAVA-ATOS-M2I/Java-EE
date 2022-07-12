@@ -4,14 +4,14 @@
         <filter-name>RequestLoggingFilter</filter-name>
         <filter-class>fr.m2i.jee.RequestLoggingFilter</filter-class>
     </filter>
-    <listener>
-        <display-name>Global listener</display-name>
-        <listener-class>fr.m2i.jee.MyFirstListener</listener-class>
-    </listener>
     <filter-mapping>
         <filter-name>RequestLoggingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <listener>
+        <display-name>Global listener</display-name>
+        <listener-class>fr.m2i.jee.MyFirstListener</listener-class>
+    </listener>
     <servlet>
         <servlet-name>FirstServlet</servlet-name>
         <servlet-class>fr.m2i.jee.FirstServlet</servlet-class>

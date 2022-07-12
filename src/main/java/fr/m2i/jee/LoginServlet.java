@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-        this.getServletContext().getRequestDispatcher("/welcome.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/WEB-INF/welcome.jsp").forward(request, response);
     }
 
     /**

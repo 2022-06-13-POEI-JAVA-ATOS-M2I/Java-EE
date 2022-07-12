@@ -21,7 +21,7 @@ public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        HttpSession session=request.getSession();  
+        HttpSession session=request.getSession();
         session.invalidate();
 
         response.setHeader("Refresh", "5; URL=/jee/LoginServlet");
