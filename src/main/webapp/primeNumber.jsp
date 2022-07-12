@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>     
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <jsp:include page="include/header.jsp">
@@ -23,7 +23,7 @@
         <c:set var="f" value="${param.fin}" />	
         <c:if test="${d != null && f != null && d < f}">
             <c:forEach var="entry" begin="${d}" end="${f}"> 
-                <c:set var="v" value ="${entry}" />	
+                <c:set var="v" value ="${entry}" />
                 <c:set var="etat" value ="0" />
                 <c:forEach var="item" begin="2" end="${v / 2}">
                     <c:if test="${v % item == 0 && v != item}">
